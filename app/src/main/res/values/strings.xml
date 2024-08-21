@@ -1,0 +1,174 @@
+<resources>
+    <string name="app_name">Chuyển đổi đơn vị</string>
+    <string name="title_activity_convert">Bộ chuyển đổi</string>
+
+    <!-- Tên bộ chuyển đổi -->
+    <string name="mass">Khối lượng</string>
+    <string name="temperature">Nhiệt độ</string>
+    <string name="volume">Thể tích</string>
+    <string name="speed">Tốc độ</string>
+    <string name="length">Chiều dài</string>
+    <string name="memory">Bộ nhớ</string>
+    <string name="other">Khác</string>
+    <string name="time">Thời gian</string>
+    <string name="area">Diện tích</string>
+    <string name="currency">Tiền tệ</string>
+
+    <!-- Đơn vị khối lượng và ký hiệu -->
+    <string name="kilogram">Kilôgam</string>
+    <string name="milligram">Milligam</string>
+    <string name="gram">Gam</string>
+    <string name="tonne">Tấn</string>
+    <string name="hundredweight">Tạ</string>
+
+    <string name="kilogramsymbol">kg</string>
+    <string name="gramsymbol">g</string>
+    <string name="milligramsymbol">mg</string>
+    <string name="hundredweightsymbol">tạ</string>
+    <string name="tonnesymbol">t</string>
+
+    <!-- Đơn vị âm lượng và ký hiệu -->
+    <string name="millilitre">Mililit</string>
+    <string name="cubicmetre">Mét khối</string>
+    <string name="litre">Lít</string>
+
+    <string name="litresymbol">L</string>
+    <string name="millilitresymbol">mL</string>
+
+    <!-- Đơn vị chiều dài và ký hiệu -->
+    <string name="metre">Mét</string>
+    <string name="millimetre">Milimét</string>
+    <string name="centimetre">Xentimét</string>
+    <string name="decimetre">Đềximét</string>
+    <string name="kilometre">Kilômét</string>
+    <string name="inch">Inch</string>
+    <string name="mile">Dặm</string>
+    <string name="foot">Foot</string>
+    <string name="yard">Yard</string>
+
+    <string name="metresymbol">m</string>
+    <string name="millimetresymbol">mm</string>
+    <string name="centimetresymbol">cm</string>
+    <string name="decimetresymbol">dm</string>
+    <string name="kilometresymbol">km</string>
+    <string name="inchsymbol">in</string>
+    <string name="milesymbol">mi</string>
+    <string name="footsymbol">ft</string>
+    <string name="yardsymbol">yd</string>
+
+    <!-- Đơn vị nhiệt độ và ký hiệu -->
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="celsius">Celsius</string>
+    <string name="kelvin">Kelvin</string>
+
+    <string name="kelvinsymbol">K</string>
+    <string name="celsiussymbol" translatable="false">°C</string>
+    <string name="fahrenheitsymbol" translatable="false">°F</string>
+
+    <!-- Đơn vị tốc độ và ký hiệu -->
+    <string name="metrespersecond">Mét trên giây</string>
+    <string name="kilometresperhour">Kilômét trên giờ</string>
+    <string name="knots">Hải lý</string>
+    <string name="footspersecond">Feet trên giây</string>
+    <string name="milesperhour">Dặm trên giờ</string>
+
+    <string name="mpssymbol">m/s</string>
+    <string name="kmpssymbol">km/h</string>
+    <string name="miphsymbol">mi/h</string>
+    <string name="ftpssymbol">ft/s</string>
+    <string name="knotssymbol">kn</string>
+
+    <!-- Đơn vị thời gian và ký hiệu -->
+    <string name="microsecond">Microgiây</string>
+    <string name="millisecond">Miligiây</string>
+    <string name="second">Giây</string>
+    <string name="minute">Phút</string>
+    <string name="hour">Giờ</string>
+    <string name="day">Ngày</string>
+    <string name="week">Tuần</string>
+    <string name="year">Năm</string>
+
+    <string name="millisecondsymbol">ms</string>
+    <string name="microsecondsymbol">μs</string>
+    <string name="secondsymbol">s</string>
+    <string name="minutesymbol">phút</string>
+    <string name="hoursymbol">h</string>
+    <string name="daysymbol">ngày</string>
+    <string name="weeksymbol">tuần</string>
+    <string name="yearsymbol">năm</string>
+
+    <!-- Đơn vị bộ nhớ và ký hiệu -->
+    <string name="bit">Bit</string>
+    <string name="memorybyte">Byte</string>
+    <string name="kilobyte">Kilôbyte</string>
+    <string name="megabyte">Megabyte</string>
+    <string name="gigabyte">Gigabyte</string>
+    <string name="terabyte">Terabyte</string>
+    <string name="petabyte">Petabyte</string>
+
+    <string name="bit_symbol">b</string>
+    <string name="memorybytesymbol">B</string>
+    <string name="kilobytesymbol">kB</string>
+    <string name="megabytesymbol">MB</string>
+    <string name="gigabytesymbol">GB</string>
+    <string name="terabytesymbol">TB</string>
+    <string name="petabytesymbol">PB</string>
+
+    <!-- Đơn vị diện tích và ký hiệu -->
+    <string name="squaremetre">Mét vuông</string>
+    <string name="squarecentimetre">Xentimét vuông</string>
+    <string name="squaremillimetre">Milimét vuông</string>
+    <string name="squarekilometre">Kilômét vuông</string>
+    <string name="squarefoot">Foot vuông</string>
+    <string name="squareyard">Yard vuông</string>
+    <string name="squaremile">Dặm vuông</string>
+    <string name="squareinch">Inch vuông</string>
+    <string name="hectare">Hecta</string>
+    <string name="are">Sào</string>
+    <string name="acre">Mẫu Anh</string>
+
+    <string name="hectaresymbol">ha</string>
+    <string name="aresymbol">a</string>
+    <string name="acresymbol">Mẫu Anh</string>
+
+    <!-- Đơn vị khác -->
+    <string name="pico">Pico</string>
+    <string name="nano">Nano</string>
+    <string name="micro">Micro</string>
+    <string name="milli">Milli</string>
+    <string name="kilo">Kilo</string>
+    <string name="mega">Mega</string>
+    <string name="giga">Giga</string>
+    <string name="tera">Tera</string>
+    <string name="copy_result_toast">Đã sao chép vào khay nhớ tạm</string>
+    <string name="description_copy_button">Nút sao chép kết quả</string>
+    <string name="description_paste_button">Nút dán giá trị</string>
+    <string name="description_icon">Biểu tượng danh mục</string>
+    <string name="zero_hint" translatable="false">0</string>
+    <string name="gallon">Gallon Mỹ</string>
+    <string name="gallonsymbol">gal</string>
+    <string name="barrel">Thùng</string>
+    <string name="barrelsymbol">th</string>
+    <string name="astronomicalunit">Đơn vị thiên văn</string>
+    <string name="astronomicalunitsymbol">au</string>
+    <string name="parsec">Parsec</string>
+    <string name="parsecsymbol">pc</string>
+    <string name="lightyear">Năm ánh sáng</string>
+    <string name="lightyearsymbol">ly</string>
+
+    <string name="history_shortcut_short_label">Lịch sử</string>
+    <string name="history_shortcut_long_label">Lịch sử</string>
+    <string name="history_shortcut_disabled_label">Lịch sử</string>
+    <string name="title_activity_history">Lịch sử</string>
+    <string name="no_history_items">Bạn chưa lưu bất kỳ kết quả nào</string>
+    <string name="description_no_history_icon">Biểu tượng thông báo không có lịch sử</string>
+    <string name="menu_history_label">Lịch sử</string>
+    <string name="menu_save_label">Lưu</string>
+    <string name="menu_delete_label">Xóa lịch sử</string>
+    <string name="menu_filter_label">Lọc kết quả</string>
+    <string name="currency_byn_name">Rúp Belarus</string>
+    <string name="swap_source_and_result_units_and_values">Hoán đổi đơn vị và giá trị nguồn và kết quả</string>
+    <string name="share_button">Nút chia sẻ</string>
+    <string name="remove_item_button">Nút xóa mục</string>
+
+</resources>

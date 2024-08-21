@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_history_shortcut"
+        android:shortcutDisabledMessage="@string/history_shortcut_disabled_label"
+        android:shortcutId="history"
+        android:shortcutLongLabel="@string/history_shortcut_long_label"
+        android:shortcutShortLabel="@string/history_shortcut_short_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="vn.edu.eaut.unitconverter.history.HistoryActivity"
+            android:targetPackage="vn.edu.eaut.unitconverter" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>
