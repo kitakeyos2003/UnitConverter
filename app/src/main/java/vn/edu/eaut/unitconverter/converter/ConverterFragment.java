@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -18,7 +19,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
-import dev.chrisbanes.insetter.Insetter;
 import vn.edu.eaut.unitconverter.R;
 import vn.edu.eaut.unitconverter.databinding.FragmentConverterBinding;
 import vn.edu.eaut.unitconverter.history.HistoryActivity;
@@ -36,14 +36,12 @@ public class ConverterFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getActivity() != null) {
-            viewModel = new ViewModelProvider(requireActivity()).get(ConverterViewModel.class);
-        }
+        viewModel = new ViewModelProvider(requireActivity()).get(ConverterViewModel.class);
     }
 
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentConverterBinding.bind(view);
 
@@ -59,10 +57,8 @@ public class ConverterFragment extends Fragment {
             return false;
         });
 
-        if (getArguments() != null && getArguments().getBoolean(SHOW_NAV_BUTTON_ARG)) {
-            binding.toolbar.setNavigationIcon(R.drawable.ic_menu);
-            binding.toolbar.setNavigationOnClickListener(v -> viewModel.setDrawerOpened(true));
-        }
+        binding.toolbar.setNavigationIcon(R.drawable.ic_menu);
+        binding.toolbar.setNavigationOnClickListener(v -> viewModel.setDrawerOpened(true));
 
         binding.display.onTextChanged(text -> viewModel.convert(binding.display.getConvertData()));
         binding.display.setSpinnersCallback(() -> viewModel.convert(binding.display.getConvertData()));
@@ -76,14 +72,11 @@ public class ConverterFragment extends Fragment {
             }
         });
 
-        if (binding.converterDisplayContainer != null) {
-            ViewCompat.setOnApplyWindowInsetsListener(binding.converterDisplayContainer, (v, insets) -> {
-                Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-                v.setPadding(systemInsets.left, systemInsets.top, systemInsets.right, systemInsets.bottom);
-                return insets;
-            });
-
-        }
+        ViewCompat.setOnApplyWindowInsetsListener(binding.converterDisplayContainer, (v, insets) -> {
+            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemInsets.left, systemInsets.top, systemInsets.right, systemInsets.bottom);
+            return insets;
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.keypad, (v, insets) -> {
             Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -108,9 +101,9 @@ public class ConverterFragment extends Fragment {
                 }
             }
         });
-//
+
         binding.keypad.setNumericListener(binding.display::appendText);
-////
+
         viewModel.getBackgroundColor().observe(getViewLifecycleOwner(), colorRes -> {
             int color = ContextCompat.getColor(requireContext(), R.color.material_bluegrey_500);
             binding.background.setBackgroundColor(color);
@@ -127,5 +120,4 @@ public class ConverterFragment extends Fragment {
         });
     }
 
-    public static final String SHOW_NAV_BUTTON_ARG = "showNavButton";
 }

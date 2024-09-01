@@ -1,4 +1,4 @@
-package vn.edu.eaut.unitconverter.categories;
+package vn.edu.eaut.unitconverter.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -16,10 +16,6 @@ public class SquareFrameLayout extends FrameLayout {
 
     public SquareFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
-
-    public SquareFrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     @Override

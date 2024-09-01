@@ -129,11 +129,4 @@ public enum ConverterCategory {
         return index;
     }
 
-    public static final List<ConverterCategory> Categories;
-
-    static {
-        Categories = new ArrayList<>();
-        Collections.addAll(Categories, ConverterCategory.values());
-    }
-
 }

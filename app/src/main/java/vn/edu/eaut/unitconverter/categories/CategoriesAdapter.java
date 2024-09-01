@@ -1,7 +1,6 @@
 package vn.edu.eaut.unitconverter.categories;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,7 +45,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         void onCategoryClick(int index);
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         private final CategoryItemBinding binding;
 
         public ViewHolder(CategoryItemBinding binding) {

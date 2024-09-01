@@ -1,16 +1,23 @@
 package vn.edu.eaut.unitconverter.converter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.ViewGroup;
+import android.view.WindowInsets;
+
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import androidx.core.os.BundleCompat;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -46,23 +53,23 @@ public class ConverterActivity extends AppCompatActivity {
         };
         dispatcher.addCallback(this, callback);
 
-//        viewModel.getDrawerOpened().observe(this, opened -> {
-//            callback.setEnabled(opened);
-//            if (opened) {
-//                binding.navigationDrawer.open();
-//            } else {
-//                binding.navigationDrawer.close();
-//            }
-//        });
+        viewModel.getDrawerOpened().observe(this, opened -> {
+            callback.setEnabled(opened);
+            if (opened) {
+                binding.navigationDrawer.open();
+            } else {
+                binding.navigationDrawer.close();
+            }
+        });
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setReorderingAllowed(true);
         transaction.replace(R.id.container, ConverterFragment.class, getIntent().getExtras());
         transaction.commit();
 
-//        viewModel.getCategory().observe(this, category -> {
-//            binding.navigationView.getMenu().getItem(category).setChecked(true);
-//        });
+        viewModel.getCategory().observe(this, category -> {
+            binding.navigationView.getMenu().getItem(category).setChecked(true);
+        });
 
         int category = getIntent().getIntExtra(CONVERTER_ID_EXTRA, 0);
         viewModel.load(Categories.INSTANCE.get(category), this);
@@ -82,25 +89,18 @@ public class ConverterActivity extends AppCompatActivity {
             viewModel.setDrawerOpened(false);
             return true;
         });
-
-//        Insetter.builder()
-//                .applyInsetsToView(binding.navigationView, Insetter.CONSUME_SYSTEM_BARS)
-//                .addInsetListener(InsetterListener.builder()
-//                        .marginTop(true)
-//                        .marginBottom(true)
-//                        .build());
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-//        if (viewModel.getCategory().getValue() != null) {
-//            outState.putInt(CONVERTER_ID_EXTRA, viewModel.getCategory().getValue());
-//        }
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        if (viewModel.getCategory().getValue() != null) {
+            outState.putInt(CONVERTER_ID_EXTRA, viewModel.getCategory().getValue());
+        }
         super.onSaveInstanceState(outState);
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         int category = savedInstanceState.getInt(CONVERTER_ID_EXTRA, -1);
         if (category != -1) {

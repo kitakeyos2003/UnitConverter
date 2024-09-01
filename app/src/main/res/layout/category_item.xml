@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vn.edu.eaut.unitconverter.categories.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<vn.edu.eaut.unitconverter.layout.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/category_container"
     android:layout_width="match_parent"
@@ -36,4 +36,4 @@
         android:layout_height="match_parent"
         android:background="?android:attr/selectableItemBackgroundBorderless" />
 
-</vn.edu.eaut.unitconverter.categories.SquareFrameLayout>
+</vn.edu.eaut.unitconverter.layout.SquareFrameLayout>

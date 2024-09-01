@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,7 @@ import vn.edu.eaut.unitconverter.model.ConversionUnit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class ConverterDisplayView extends LinearLayout {
@@ -51,24 +54,35 @@ public class ConverterDisplayView extends LinearLayout {
         setOrientation(VERTICAL);
         binding = DisplayBinding.inflate(LayoutInflater.from(context), this);
 
-        binding.fab.setOnClickListener(v -> {
-            setConvertData(getConvertData().swap());
-        });
+        binding.fab.setOnClickListener(v -> setConvertData(getConvertData().swap()));
 
         binding.sourceValue.setShowSoftInputOnFocus(false);
         binding.resultValue.setShowSoftInputOnFocus(false);
     }
 
     public void onTextChanged(OnTextChangedListener watcher) {
-//        binding.sourceValue.doAfterTextChanged(it -> {
-//            if (it != null) {
-//                watcher.onTextChanged(it.toString());
-//            }
-//        });
+        binding.sourceValue.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                watcher.onTextChanged(editable.toString());
+            }
+        });
     }
 
     public void showResult(String result) {
         binding.resultValue.setText(result);
+        updateSuffixes();
     }
 
     public ConvertData getConvertData() {
@@ -137,7 +151,7 @@ public class ConverterDisplayView extends LinearLayout {
         revealView.setRight(getRight());
         revealView.setBackgroundColor(getContext().getColor(R.color.colorSecondary));
 
-        ViewGroupOverlay groupOverlay = (ViewGroupOverlay) ((ViewGroup) getParent()).getOverlay();
+        ViewGroupOverlay groupOverlay = ((ViewGroup) getParent()).getOverlay();
         groupOverlay.add(revealView);
 
         int revealCenterX = getWidth();

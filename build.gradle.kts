@@ -10,6 +10,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
+
 spotless {
     kotlin {
         ktlint("1.3.1")

@@ -56,7 +56,6 @@ public class OtherConverter extends Converter{
     }
 
     private String toExp(String exponent) {
-        //×10<sup><small>$this</small></sup>
-        return "10^" + exponent;
+        return "×10<sup><small>" + exponent + "</small></sup>";
     }
 }
