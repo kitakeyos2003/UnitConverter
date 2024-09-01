@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.snackbar.Snackbar;
 
 import dagger.hilt.android.AndroidEntryPoint;
+import dev.chrisbanes.insetter.Insetter;
 import vn.edu.eaut.unitconverter.R;
 import vn.edu.eaut.unitconverter.databinding.FragmentConverterBinding;
 import vn.edu.eaut.unitconverter.history.HistoryActivity;
@@ -71,18 +72,31 @@ public class ConverterFragment extends Fragment {
                 Snackbar.make(binding.getRoot(), R.string.copy_result_toast, Snackbar.LENGTH_SHORT).show();
             }
         });
+        Insetter.builder()
+                .setOnApplyInsetsListener((v, insets, initialState) -> {
+                    int statusBarInsets = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
+                    v.setPadding(
+                            v.getPaddingLeft(),
+                            v.getPaddingTop() + statusBarInsets,
+                            v.getPaddingRight(),
+                            v.getPaddingBottom()
+                    );
+                })
+                .applyToView(binding.converterDisplayContainer);
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.converterDisplayContainer, (v, insets) -> {
-            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemInsets.left, systemInsets.top, systemInsets.right, systemInsets.bottom);
-            return insets;
-        });
+        Insetter.builder()
+                .setOnApplyInsetsListener((v, insets, initialState) -> {
+                    int systemBarInsetsTop = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+                    int systemBarInsetsBottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.keypad, (v, insets) -> {
-            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemInsets.left, systemInsets.top, systemInsets.right, systemInsets.bottom);
-            return insets;
-        });
+                    v.setPadding(
+                            v.getPaddingLeft(),
+                            v.getPaddingTop() + systemBarInsetsTop,
+                            v.getPaddingRight(),
+                            v.getPaddingBottom() + systemBarInsetsBottom
+                    );
+                })
+                .applyToView(binding.keypad);
 
         binding.keypad.setBackspaceListeners(longPress -> {
             if (longPress) {

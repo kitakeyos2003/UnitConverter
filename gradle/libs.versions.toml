@@ -36,7 +36,7 @@ firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidGradlePlugin" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidGradlePlugin" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
-insetter = { module = "dev.chrisbanes.insetter:insetter", version.ref = "insetter" }
+insetter = { module = "dev.chrisbanes.insetter:insetter-dbx", version.ref = "insetter" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

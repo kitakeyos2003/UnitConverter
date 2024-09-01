@@ -27,7 +27,6 @@ import vn.edu.eaut.unitconverter.model.ConversionUnit;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class ConverterDisplayView extends LinearLayout {

@@ -34,7 +34,6 @@ public class HistoryItem {
         this.category = category;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }

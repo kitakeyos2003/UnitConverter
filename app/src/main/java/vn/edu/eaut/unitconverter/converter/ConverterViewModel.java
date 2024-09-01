@@ -43,7 +43,6 @@ public class ConverterViewModel extends ViewModel {
         return _backgroundColor;
     }
 
-
     public LiveData<Boolean> getDrawerOpened() {
         return _drawerOpened;
     }
@@ -88,7 +87,8 @@ public class ConverterViewModel extends ViewModel {
 
     public void saveResultToHistory(ConvertData result) {
         Converter converter = _converter.getValue();
-        if (converter == null) return;
+        if (converter == null || result.getResult().isEmpty())
+            return;
 
         HistoryItem item = new HistoryItem(
                 0,

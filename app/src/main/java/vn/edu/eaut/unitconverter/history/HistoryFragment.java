@@ -44,23 +44,9 @@ public class HistoryFragment extends Fragment implements MenuProvider {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentHistoryBinding.bind(view);
 
-//        // Apply insets for navigation bars
-//        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
-//            WindowInsetsCompat navigationInsets = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
-//            v.setPadding(v.getPaddingLeft(), v.getPaddingTop(), v.getPaddingRight(), navigationInsets.bottom);
-//            return insets;
-//        });
-
         // Set up RecyclerView
         binding.recycler.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.recycler.setLayoutAnimation(AnimationUtils.loadLayoutAnimation(requireContext(), R.anim.layout_animation_fall_down));
-
-//        // Apply insets to RecyclerView
-//        ViewCompat.setOnApplyWindowInsetsListener(binding.recycler, (v, insets) -> {
-//            WindowInsetsCompat navigationInsets = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
-//            v.setPadding(v.getPaddingLeft(), v.getPaddingTop(), v.getPaddingRight(), navigationInsets.bottom);
-//            return insets;
-//        });
 
         adapter = new HistoryAdapter(viewModel::removeItem, this::shareItem);
         binding.recycler.setAdapter(adapter);
@@ -84,7 +70,7 @@ public class HistoryFragment extends Fragment implements MenuProvider {
         if (menuItem.getItemId() == R.id.delete) {
             viewModel.removeAll();
             return true;
-        } else if (menuItem.getItemId() == R.id.delete) {
+        } else if (menuItem.getItemId() == R.id.filter) {
             new HistoryFilterDialog(viewModel::filter).show(getChildFragmentManager(), "dialog");
             return true;
         }

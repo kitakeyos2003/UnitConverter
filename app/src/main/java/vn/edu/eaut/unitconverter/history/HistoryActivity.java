@@ -1,17 +1,16 @@
 package vn.edu.eaut.unitconverter.history;
 
 import android.os.Bundle;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import dagger.hilt.android.AndroidEntryPoint;
+import dev.chrisbanes.insetter.Insetter;
 import vn.edu.eaut.unitconverter.R;
 import vn.edu.eaut.unitconverter.databinding.ActivityHistoryBinding;
 
@@ -33,10 +32,19 @@ public class HistoryActivity extends AppCompatActivity {
 
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.toolbarLayout, (v, insets) -> {
-            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemInsets.left, systemInsets.top, systemInsets.right, systemInsets.bottom);
-            return insets;
-        });
+        Insetter.builder().setOnApplyInsetsListener((view, insets, initialState) -> {
+                    view.setPadding(
+                            view.getPaddingLeft(),
+                            view.getPaddingTop() + insets.getSystemWindowInsetTop(),
+                            view.getPaddingRight(),
+                            view.getPaddingBottom()
+                    );
+                    ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+                    layoutParams.leftMargin += insets.getSystemWindowInsetLeft();
+                    layoutParams.rightMargin += insets.getSystemWindowInsetRight();
+                    view.setLayoutParams(layoutParams);
+                })
+                .applyToView(binding.toolbarLayout);
+
     }
 }
