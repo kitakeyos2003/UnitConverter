@@ -169,5 +169,5 @@
     <string name="swap_source_and_result_units_and_values">Hoán đổi đơn vị và giá trị nguồn và kết quả</string>
     <string name="share_button">Nút chia sẻ</string>
     <string name="remove_item_button">Nút xóa mục</string>
-
+    <string name="no_exrate_list">Không có dữ liệu về tỉ giá tiền tệ!</string>
 </resources>

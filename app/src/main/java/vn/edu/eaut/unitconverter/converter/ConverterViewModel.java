@@ -3,6 +3,7 @@ package vn.edu.eaut.unitconverter.converter;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -84,39 +85,39 @@ public class ConverterViewModel extends ViewModel {
         _category.setValue(category.getIndex());
 
         Converter converter = category.getConverter(context);
-        loadConverter(converter);
+        initialize(converter);
     }
 
-    private void loadConverter(Converter converter) {
+    private void initialize(Converter converter) {
         ThreadPool.execute(() -> {
             if (converter instanceof CurrencyConverter c) {
                 loadFromApi(new Callback<>() {
                     @Override
-                    public void onResponse(Call<ExrateList> call, Response<ExrateList> response) {
+                    public void onResponse(@NonNull Call<ExrateList> call, @NonNull Response<ExrateList> response) {
                         c.setData(response.body());
-                        try {
-                            converter.load();
-                            _converter.postValue(converter);
-                        } catch (Exception e) {
-                            Log.e("ConvertViewModel.load()", e.getMessage());
-                        }
+                        doLoad(c);
                     }
 
                     @Override
-                    public void onFailure(Call<ExrateList> call, Throwable throwable) {
-                        Log.e("ConvertViewModel.load()", throwable.getMessage());
+                    public void onFailure(@NonNull Call<ExrateList> call, @NonNull Throwable throwable) {
+                        Log.e("ConverterViewModel.loadConverter", throwable.getMessage());
                     }
                 });
             } else {
-                try {
-                    converter.load();
-                    _converter.postValue(converter);
-                } catch (Exception e) {
-                    Log.e("ConvertViewModel.load()", e.getMessage());
-                }
+                doLoad(converter);
             }
         });
     }
+
+    private void doLoad(Converter converter) {
+        try {
+            converter.load();
+            _converter.postValue(converter);
+        } catch (Exception e) {
+            Log.e("ConverterViewModel.loadConverter", e.getMessage());
+        }
+    }
+
 
 
 
