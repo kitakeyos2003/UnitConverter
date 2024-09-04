@@ -11,13 +11,13 @@ import java.util.List;
 public interface HistoryDao {
 
     @Query("SELECT * FROM history")
-    List<HistoryItem> getAll();
+    List<HistoryEntity> getAll();
 
     @Insert
-    void insertAll(HistoryItem... items);
+    void insertAll(HistoryEntity... items);
 
     @Delete
-    void delete(HistoryItem item);
+    void delete(HistoryEntity item);
 
     @Query("DELETE FROM history")
     void deleteAll();

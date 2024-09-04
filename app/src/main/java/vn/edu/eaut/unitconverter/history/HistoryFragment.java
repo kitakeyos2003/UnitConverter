@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import dagger.hilt.android.AndroidEntryPoint;
 import vn.edu.eaut.unitconverter.R;
 import vn.edu.eaut.unitconverter.databinding.FragmentHistoryBinding;
-import vn.edu.eaut.unitconverter.model.database.HistoryItem;
+import vn.edu.eaut.unitconverter.model.database.HistoryEntity;
 
 @AndroidEntryPoint
 public class HistoryFragment extends Fragment implements MenuProvider {
@@ -77,7 +77,7 @@ public class HistoryFragment extends Fragment implements MenuProvider {
         return false;
     }
 
-    private void shareItem(HistoryItem item) {
+    private void shareItem(HistoryEntity item) {
         String message = item.getValueFrom() + " " + item.getUnitFrom() + " = " + item.getValueTo() + " " + item.getUnitTo();
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.setType("text/plain");

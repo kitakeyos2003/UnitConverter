@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import vn.edu.eaut.unitconverter.databinding.HistoryItemBinding;
 import vn.edu.eaut.unitconverter.model.Categories;
 import vn.edu.eaut.unitconverter.model.ConverterCategory;
-import vn.edu.eaut.unitconverter.model.database.HistoryItem;
+import vn.edu.eaut.unitconverter.model.database.HistoryEntity;
 
-public class HistoryAdapter extends ListAdapter<HistoryItem, HistoryAdapter.ViewHolder> {
+public class HistoryAdapter extends ListAdapter<HistoryEntity, HistoryAdapter.ViewHolder> {
     private final RemoveItemListener remove;
     private final ShareItemListener share;
 
@@ -47,27 +47,27 @@ public class HistoryAdapter extends ListAdapter<HistoryItem, HistoryAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        HistoryItem item = getItem(position);
+        HistoryEntity item = getItem(position);
         ConverterCategory category = Categories.INSTANCE.get(item.getCategory());
         holder.bind(category, item);
     }
 
     public interface RemoveItemListener {
-        void onRemove(HistoryItem item);
+        void onRemove(HistoryEntity item);
     }
 
     public interface ShareItemListener {
-        void onShare(HistoryItem item);
+        void onShare(HistoryEntity item);
     }
 
-    public static class Differ extends DiffUtil.ItemCallback<HistoryItem> {
+    public static class Differ extends DiffUtil.ItemCallback<HistoryEntity> {
         @Override
-        public boolean areItemsTheSame(HistoryItem oldItem, HistoryItem newItem) {
+        public boolean areItemsTheSame(HistoryEntity oldItem, HistoryEntity newItem) {
             return oldItem.getId() == newItem.getId();
         }
 
         @Override
-        public boolean areContentsTheSame(HistoryItem oldItem, HistoryItem newItem) {
+        public boolean areContentsTheSame(HistoryEntity oldItem, HistoryEntity newItem) {
             return oldItem.equals(newItem);
         }
     }
@@ -80,7 +80,7 @@ public class HistoryAdapter extends ListAdapter<HistoryItem, HistoryAdapter.View
             this.binding = binding;
         }
 
-        public void bind(ConverterCategory category, HistoryItem item) {
+        public void bind(ConverterCategory category, HistoryEntity item) {
             binding.categoryName.setText(category.getCategoryName());
             binding.valueFrom.setText(item.getValueFrom());
             binding.valueTo.setText(item.getValueTo());

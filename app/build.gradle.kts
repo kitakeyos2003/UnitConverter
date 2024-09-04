@@ -65,6 +65,7 @@ dependencies {
     ksp(libs.moshi.kotlin.codegen)
     // Retrofit
     implementation(libs.retrofit)
+    implementation (libs.converter.simplexml)
     implementation(libs.converter.moshi)
     // Insetter
     implementation(libs.insetter)

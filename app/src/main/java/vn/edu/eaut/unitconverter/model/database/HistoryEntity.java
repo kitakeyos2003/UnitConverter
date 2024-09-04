@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "history")
-public class HistoryItem {
+public class HistoryEntity {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -25,7 +25,7 @@ public class HistoryItem {
     @ColumnInfo(name = "category")
     private int category;
 
-    public HistoryItem(int id, String unitFrom, String unitTo, String valueFrom, String valueTo, int category) {
+    public HistoryEntity(int id, String unitFrom, String unitTo, String valueFrom, String valueTo, int category) {
         this.id = id;
         this.unitFrom = unitFrom;
         this.unitTo = unitTo;

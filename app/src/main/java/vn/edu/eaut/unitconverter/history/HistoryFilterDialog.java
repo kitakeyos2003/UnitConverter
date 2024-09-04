@@ -16,11 +16,11 @@ import vn.edu.eaut.unitconverter.model.Categories;
 
 public class HistoryFilterDialog extends DialogFragment {
 
-    private final Consumer<Integer> listener;
+    private final Consumer<Integer> consumer;
     private int mask = -1;
 
-    public HistoryFilterDialog(Consumer<Integer> listener) {
-        this.listener = listener;
+    public HistoryFilterDialog(Consumer<Integer> consumer) {
+        this.consumer = consumer;
     }
 
     @NonNull
@@ -38,9 +38,9 @@ public class HistoryFilterDialog extends DialogFragment {
     public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
         if (mask < 0) {
-            listener.accept(0);
+            consumer.accept(0);
         } else {
-            listener.accept(1 << mask);
+            consumer.accept(1 << mask);
         }
     }
 }

@@ -166,7 +166,6 @@
     <string name="menu_save_label">Lưu</string>
     <string name="menu_delete_label">Xóa lịch sử</string>
     <string name="menu_filter_label">Lọc kết quả</string>
-    <string name="currency_byn_name">Rúp Belarus</string>
     <string name="swap_source_and_result_units_and_values">Hoán đổi đơn vị và giá trị nguồn và kết quả</string>
     <string name="share_button">Nút chia sẻ</string>
     <string name="remove_item_button">Nút xóa mục</string>

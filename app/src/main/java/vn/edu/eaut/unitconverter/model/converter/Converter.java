@@ -28,10 +28,6 @@ public abstract class Converter {
         conversionUnits.add(unit);
     }
 
-    public void sortUnitsWith(Comparator<ConversionUnit> comparator) {
-        conversionUnits.sort(comparator);
-    }
-
     public ConversionUnit get(int index) {
         return conversionUnits.get(index);
     }
