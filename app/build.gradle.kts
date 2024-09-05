@@ -1,11 +1,10 @@
 plugins {
     id("com.android.application")
-//    id("dev.nevack.plugins.signing-config")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("dagger.hilt.android.plugin")
     id("org.gradle.android.cache-fix")
-//    id("com.google.gms.google-services")
+    id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
 
@@ -25,8 +24,8 @@ android {
     buildTypes {
         release {
             isDebuggable = false
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 file("proguard-rules.pro"),
@@ -37,6 +36,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    ndkVersion = "27.0.12077973"
 }
 
 dependencies {

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542313165842",
+    "project_id": "fruit-6ceef",
+    "storage_bucket": "fruit-6ceef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542313165842:android:d139c4b7f2a699be6e94cb",
+        "android_client_info": {
+          "package_name": "vn.edu.eaut.unitconverter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOrilfSQSCqLwnyt-Gk2LkLEYQebUxh2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

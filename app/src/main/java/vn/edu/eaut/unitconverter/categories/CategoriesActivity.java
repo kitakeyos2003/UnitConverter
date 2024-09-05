@@ -18,6 +18,7 @@ import vn.edu.eaut.unitconverter.converter.ConverterActivity;
 import vn.edu.eaut.unitconverter.converter.ConverterFragment;
 import vn.edu.eaut.unitconverter.converter.ConverterViewModel;
 import vn.edu.eaut.unitconverter.databinding.ActivityCategoriesBinding;
+import vn.edu.eaut.unitconverter.history.HistoryViewModel;
 import vn.edu.eaut.unitconverter.model.Categories;
 
 @AndroidEntryPoint
@@ -29,14 +30,30 @@ public class CategoriesActivity extends AppCompatActivity {
         ActivityCategoriesBinding binding = ActivityCategoriesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
+
+
+        boolean isTablet = binding.converterContainer != null;
+
         CategoriesViewModel categoriesViewModel = new ViewModelProvider(this).get(CategoriesViewModel.class);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setReorderingAllowed(true);
         transaction.replace(R.id.categoriesContainer, new CategoriesFragment());
+        if (isTablet) {
+            transaction.replace(R.id.converterContainer, new ConverterFragment());
+        }
         transaction.commit();
+        ConverterViewModel converterViewModel = new ViewModelProvider(this).get(ConverterViewModel.class);
+        categoriesViewModel.getConverterOpened().observe(this, it -> {
+            if (isTablet) {
+                converterViewModel.load(Categories.INSTANCE.get(it), this);
+            } else {
+                startActivity(ConverterActivity.getIntent(this, it));
+            }
+        });
 
-        categoriesViewModel.getConverterOpened().observe(this, it -> startActivity(ConverterActivity.getIntent(this, it)));
-
+        if (isTablet) {
+            converterViewModel.load(Categories.INSTANCE.get(0), this);
+        }
 
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 

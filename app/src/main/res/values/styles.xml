@@ -23,6 +23,8 @@
     </style>
 
     <style name="Widget.App.Button.KeyPad.CopyPasteButton" parent="Widget.Material3.Button.TextButton.Icon">
+        <item name="android:textAppearance">?textAppearanceDisplayMedium</item>
+        <item name="android:textColor">?colorOnPrimary</item>
     </style>
 
 </resources>

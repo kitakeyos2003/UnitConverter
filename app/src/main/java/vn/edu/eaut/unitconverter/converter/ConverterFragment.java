@@ -10,8 +10,6 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -72,17 +70,19 @@ public class ConverterFragment extends Fragment {
                 Snackbar.make(binding.getRoot(), R.string.copy_result_toast, Snackbar.LENGTH_SHORT).show();
             }
         });
-        Insetter.builder()
-                .setOnApplyInsetsListener((v, insets, initialState) -> {
-                    int statusBarInsets = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
-                    v.setPadding(
-                            v.getPaddingLeft(),
-                            v.getPaddingTop() + statusBarInsets,
-                            v.getPaddingRight(),
-                            v.getPaddingBottom()
-                    );
-                })
-                .applyToView(binding.converterDisplayContainer);
+        if (binding.converterDisplayContainer != null) {
+            Insetter.builder()
+                    .setOnApplyInsetsListener((v, insets, initialState) -> {
+                        int statusBarInsets = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
+                        v.setPadding(
+                                v.getPaddingLeft(),
+                                v.getPaddingTop() + statusBarInsets,
+                                v.getPaddingRight(),
+                                v.getPaddingBottom()
+                        );
+                    })
+                    .applyToView(binding.converterDisplayContainer);
+        }
 
         Insetter.builder()
                 .setOnApplyInsetsListener((v, insets, initialState) -> {
