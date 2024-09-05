@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">单位转换器</string>
+    <string name="title_activity_convert">转换器</string>
+
+    <!-- Converter names -->
+    <string name="mass">质量</string>
+    <string name="temperature">温度</string>
+    <string name="volume">体积</string>
+    <string name="speed">速度</string>
+    <string name="length">长度</string>
+    <string name="memory">内存</string>
+    <string name="other">其他</string>
+    <string name="time">时间</string>
+    <string name="area">面积</string>
+    <string name="currency">货币</string>
+
+    <!-- Mass units and symbols -->
+    <string name="kilogram">千克</string>
+    <string name="milligram">毫克</string>
+    <string name="gram">克</string>
+    <string name="tonne">吨</string>
+    <string name="hundredweight">英担</string>
+
+    <string name="kilogramsymbol">kg</string>
+    <string name="gramsymbol">g</string>
+    <string name="milligramsymbol">mg</string>
+    <string name="hundredweightsymbol">cwt</string>
+    <string name="tonnesymbol">t</string>
+
+    <!-- Volume units and symbols -->
+    <string name="millilitre">毫升</string>
+    <string name="cubicmetre">立方米</string>
+    <string name="litre">升</string>
+
+    <string name="litresymbol">L</string>
+    <string name="millilitresymbol">mL</string>
+
+    <!-- Length units and symbols -->
+    <string name="metre">米</string>
+    <string name="millimetre">毫米</string>
+    <string name="centimetre">厘米</string>
+    <string name="decimetre">分米</string>
+    <string name="kilometre">千米</string>
+    <string name="inch">英寸</string>
+    <string name="mile">英里</string>
+    <string name="foot">英尺</string>
+    <string name="yard">码</string>
+
+    <string name="metresymbol">m</string>
+    <string name="millimetresymbol">mm</string>
+    <string name="centimetresymbol">cm</string>
+    <string name="decimetresymbol">dm</string>
+    <string name="kilometresymbol">km</string>
+    <string name="inchsymbol">in</string>
+    <string name="milesymbol">mi</string>
+    <string name="footsymbol">ft</string>
+    <string name="yardsymbol">yd</string>
+
+    <!-- Temperature units and symbols -->
+    <string name="fahrenheit">华氏度</string>
+    <string name="celsius">摄氏度</string>
+    <string name="kelvin">开尔文</string>
+
+    <string name="kelvinsymbol">K</string>
+    <string name="celsiussymbol" translatable="false">°C</string>
+    <string name="fahrenheitsymbol" translatable="false">°F</string>
+
+    <!-- Speed units and symbols -->
+    <string name="metrespersecond">米每秒</string>
+    <string name="kilometresperhour">千米每小时</string>
+    <string name="knots">节</string>
+    <string name="footspersecond">英尺每秒</string>
+    <string name="milesperhour">英里每小时</string>
+
+    <string name="mpssymbol">m/s</string>
+    <string name="kmpssymbol">km/h</string>
+    <string name="miphsymbol">mi/h</string>
+    <string name="ftpssymbol">ft/s</string>
+    <string name="knotssymbol">kn</string>
+
+    <!-- Time units and symbols -->
+    <string name="microsecond">微秒</string>
+    <string name="millisecond">毫秒</string>
+    <string name="second">秒</string>
+    <string name="minute">分钟</string>
+    <string name="hour">小时</string>
+    <string name="day">天</string>
+    <string name="week">周</string>
+    <string name="year">年</string>
+
+    <string name="millisecondsymbol">ms</string>
+    <string name="microsecondsymbol">μs</string>
+    <string name="secondsymbol">s</string>
+    <string name="minutesymbol">min</string>
+    <string name="hoursymbol">h</string>
+    <string name="daysymbol">d</string>
+    <string name="weeksymbol">w</string>
+    <string name="yearsymbol">y</string>
+
+    <!-- Memory units and symbols -->
+
+    <string name="bit">比特</string>
+    <string name="memorybyte">字节</string>
+    <string name="kilobyte">千字节</string>
+    <string name="megabyte">兆字节</string>
+    <string name="gigabyte">吉字节</string>
+    <string name="terabyte">太字节</string>
+    <string name="petabyte">拍字节</string>
+
+    <string name="bit_symbol">b</string>
+    <string name="memorybytesymbol">B</string>
+    <string name="kilobytesymbol">kB</string>
+    <string name="megabytesymbol">MB</string>
+    <string name="gigabytesymbol">GB</string>
+    <string name="terabytesymbol">TB</string>
+    <string name="petabytesymbol">PB</string>
+
+    <!-- Area units and symbols -->
+
+    <string name="squaremetre">平方米</string>
+    <string name="squarecentimetre">平方厘米</string>
+    <string name="squaremillimetre">平方毫米</string>
+    <string name="squarekilometre">平方公里</string>
+    <string name="squarefoot">平方英尺</string>
+    <string name="squareyard">平方码</string>
+    <string name="squaremile">平方英里</string>
+    <string name="squareinch">平方英寸</string>
+    <string name="hectare">公顷</string>
+    <string name="are">公亩</string>
+    <string name="acre">英亩</string>
+
+    <string name="hectaresymbol">ha</string>
+    <string name="aresymbol">a</string>
+    <string name="acresymbol">Acre</string>
+
+    <!-- Other units -->
+    <string name="pico">皮</string>
+    <string name="nano">纳</string>
+    <string name="micro">微</string>
+    <string name="milli">毫</string>
+    <string name="kilo">千</string>
+    <string name="mega">兆</string>
+    <string name="giga">吉</string>
+    <string name="tera">太</string>
+    <string name="copy_result_toast">已复制到剪贴板</string>
+    <string name="description_copy_button">复制结果按钮</string>
+    <string name="description_paste_button">粘贴值按钮</string>
+    <string name="description_icon">类别图标</string>
+    <string name="zero_hint" translatable="false">0</string>
+    <string name="gallon">美制加仑</string>
+    <string name="gallonsymbol">gal</string>
+    <string name="barrel">桶</string>
+    <string name="barrelsymbol">ba</string>
+    <string name="astronomicalunit">天文单位</string>
+    <string name="astronomicalunitsymbol">au</string>
+    <string name="parsec">秒差距</string>
+    <string name="parsecsymbol">pc</string>
+    <string name="lightyear">光年</string>
+    <string name="lightyearsymbol">ly</string>
+
+    <string name="history_shortcut_short_label">历史记录</string>
+    <string name="history_shortcut_long_label">历史记录</string>
+    <string name="history_shortcut_disabled_label">历史记录</string>
+    <string name="title_activity_history">历史记录</string>
+    <string name="no_history_items">您还没有保存任何结果</string>
+    <string name="description_no_history_icon">无历史记录图标</string>
+    <string name="menu_history_label">历史记录</string>
+    <string name="menu_save_label">保存</string>
+    <string name="menu_delete_label">删除历史</string>
+    <string name="menu_filter_label">筛选结果</string>
+    <string name="swap_source_and_result_units_and_values">交换源单位和结果单位及数值按钮</string>
+    <string name="share_button">分享按钮</string>
+    <string name="remove_item_button">移除项目按钮</string>
+    <string name="no_exrate_list">无汇率数据可用！</string>
+
+</resources>

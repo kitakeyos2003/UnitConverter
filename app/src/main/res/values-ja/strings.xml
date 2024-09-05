@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">単位変換</string>
+    <string name="title_activity_convert">コンバーター</string>
+
+    <!-- Converter names -->
+    <string name="mass">質量</string>
+    <string name="temperature">温度</string>
+    <string name="volume">体積</string>
+    <string name="speed">速度</string>
+    <string name="length">長さ</string>
+    <string name="memory">メモリ</string>
+    <string name="other">その他</string>
+    <string name="time">時間</string>
+    <string name="area">面積</string>
+    <string name="currency">通貨</string>
+
+    <!-- Mass units and symbols -->
+    <string name="kilogram">キログラム</string>
+    <string name="milligram">ミリグラム</string>
+    <string name="gram">グラム</string>
+    <string name="tonne">トン</string>
+    <string name="hundredweight">ハンドレッドウェイト</string>
+
+    <string name="kilogramsymbol">kg</string>
+    <string name="gramsymbol">g</string>
+    <string name="milligramsymbol">mg</string>
+    <string name="hundredweightsymbol">cwt</string>
+    <string name="tonnesymbol">t</string>
+
+    <!-- Volume units and symbols -->
+    <string name="millilitre">ミリリットル</string>
+    <string name="cubicmetre">立方メートル</string>
+    <string name="litre">リットル</string>
+
+    <string name="litresymbol">L</string>
+    <string name="millilitresymbol">mL</string>
+
+    <!-- Length units and symbols -->
+    <string name="metre">メートル</string>
+    <string name="millimetre">ミリメートル</string>
+    <string name="centimetre">センチメートル</string>
+    <string name="decimetre">デシメートル</string>
+    <string name="kilometre">キロメートル</string>
+    <string name="inch">インチ</string>
+    <string name="mile">マイル</string>
+    <string name="foot">フィート</string>
+    <string name="yard">ヤード</string>
+
+    <string name="metresymbol">m</string>
+    <string name="millimetresymbol">mm</string>
+    <string name="centimetresymbol">cm</string>
+    <string name="decimetresymbol">dm</string>
+    <string name="kilometresymbol">km</string>
+    <string name="inchsymbol">in</string>
+    <string name="milesymbol">mi</string>
+    <string name="footsymbol">ft</string>
+    <string name="yardsymbol">yd</string>
+
+    <!-- Temperature units and symbols -->
+    <string name="fahrenheit">華氏</string>
+    <string name="celsius">摂氏</string>
+    <string name="kelvin">ケルビン</string>
+
+    <string name="kelvinsymbol">K</string>
+    <string name="celsiussymbol" translatable="false">°C</string>
+    <string name="fahrenheitsymbol" translatable="false">°F</string>
+
+    <!-- Speed units and symbols -->
+    <string name="metrespersecond">メートル毎秒</string>
+    <string name="kilometresperhour">キロメートル毎時</string>
+    <string name="knots">ノット</string>
+    <string name="footspersecond">フィート毎秒</string>
+    <string name="milesperhour">マイル毎時</string>
+
+    <string name="mpssymbol">m/s</string>
+    <string name="kmpssymbol">km/h</string>
+    <string name="miphsymbol">mi/h</string>
+    <string name="ftpssymbol">ft/s</string>
+    <string name="knotssymbol">kn</string>
+
+    <!-- Time units and symbols -->
+    <string name="microsecond">マイクロ秒</string>
+    <string name="millisecond">ミリ秒</string>
+    <string name="second">秒</string>
+    <string name="minute">分</string>
+    <string name="hour">時間</string>
+    <string name="day">日</string>
+    <string name="week">週</string>
+    <string name="year">年</string>
+
+    <string name="millisecondsymbol">ms</string>
+    <string name="microsecondsymbol">μs</string>
+    <string name="secondsymbol">s</string>
+    <string name="minutesymbol">min</string>
+    <string name="hoursymbol">h</string>
+    <string name="daysymbol">d</string>
+    <string name="weeksymbol">w</string>
+    <string name="yearsymbol">y</string>
+
+    <!-- Memory units and symbols -->
+
+    <string name="bit">ビット</string>
+    <string name="memorybyte">バイト</string>
+    <string name="kilobyte">キロバイト</string>
+    <string name="megabyte">メガバイト</string>
+    <string name="gigabyte">ギガバイト</string>
+    <string name="terabyte">テラバイト</string>
+    <string name="petabyte">ペタバイト</string>
+
+    <string name="bit_symbol">b</string>
+    <string name="memorybytesymbol">B</string>
+    <string name="kilobytesymbol">kB</string>
+    <string name="megabytesymbol">MB</string>
+    <string name="gigabytesymbol">GB</string>
+    <string name="terabytesymbol">TB</string>
+    <string name="petabytesymbol">PB</string>
+
+    <!-- Area units and symbols -->
+
+    <string name="squaremetre">平方メートル</string>
+    <string name="squarecentimetre">平方センチメートル</string>
+    <string name="squaremillimetre">平方ミリメートル</string>
+    <string name="squarekilometre">平方キロメートル</string>
+    <string name="squarefoot">平方フィート</string>
+    <string name="squareyard">平方ヤード</string>
+    <string name="squaremile">平方マイル</string>
+    <string name="squareinch">平方インチ</string>
+    <string name="hectare">ヘクタール</string>
+    <string name="are">アール</string>
+    <string name="acre">エーカー</string>
+
+    <string name="hectaresymbol">ha</string>
+    <string name="aresymbol">a</string>
+    <string name="acresymbol">Acre</string>
+
+    <!-- Other units -->
+    <string name="pico">ピコ</string>
+    <string name="nano">ナノ</string>
+    <string name="micro">マイクロ</string>
+    <string name="milli">ミリ</string>
+    <string name="kilo">キロ</string>
+    <string name="mega">メガ</string>
+    <string name="giga">ギガ</string>
+    <string name="tera">テラ</string>
+    <string name="copy_result_toast">クリップボードにコピーされました</string>
+    <string name="description_copy_button">結果コピー ボタン</string>
+    <string name="description_paste_button">値を貼り付けるボタン</string>
+    <string name="description_icon">カテゴリー アイコン</string>
+    <string name="zero_hint" translatable="false">0</string>
+    <string name="gallon">米ガロン</string>
+    <string name="gallonsymbol">gal</string>
+    <string name="barrel">バレル</string>
+    <string name="barrelsymbol">ba</string>
+    <string name="astronomicalunit">天文単位</string>
+    <string name="astronomicalunitsymbol">au</string>
+    <string name="parsec">パーセク</string>
+    <string name="parsecsymbol">pc</string>
+    <string name="lightyear">光年</string>
+    <string name="lightyearsymbol">ly</string>
+
+    <string name="history_shortcut_short_label">履歴</string>
+    <string name="history_shortcut_long_label">履歴</string>
+    <string name="history_shortcut_disabled_label">履歴</string>
+    <string name="title_activity_history">履歴</string>
+    <string name="no_history_items">まだ保存された結果はありません</string>
+    <string name="description_no_history_icon">履歴なし アイコン</string>
+    <string name="menu_history_label">履歴</string>
+    <string name="menu_save_label">保存</string>
+    <string name="menu_delete_label">履歴を削除</string>
+    <string name="menu_filter_label">結果をフィルター</string>
+    <string name="swap_source_and_result_units_and_values">ソースと結果の単位と値を入れ替える ボタン</string>
+    <string name="share_button">共有 ボタン</string>
+    <string name="remove_item_button">項目を削除 ボタン</string>
+    <string name="no_exrate_list">為替レートデータが利用できません！</string>
+
+</resources>
