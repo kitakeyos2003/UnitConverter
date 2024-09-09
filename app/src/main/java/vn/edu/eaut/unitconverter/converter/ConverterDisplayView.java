@@ -104,8 +104,13 @@ public class ConverterDisplayView extends LinearLayout {
     }
 
     public String getCopyResult(boolean withUnitSymbols) {
-        return binding.resultValue.getText().toString() +
-                (withUnitSymbols ? binding.sourceValueContainer.getSuffixText().toString() : "");
+        StringBuilder builder = new StringBuilder(binding.resultValue.getText());
+        if (withUnitSymbols) {
+            if (binding.sourceValueContainer.getSuffixText() != null) {
+                builder.append(binding.sourceValueContainer.getSuffixText());
+            }
+        }
+        return builder.toString();
     }
 
     private void setSpinnerAdapter(ArrayAdapter<String> adapter, boolean isDifferent) {

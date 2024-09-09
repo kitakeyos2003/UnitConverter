@@ -3,8 +3,6 @@ package vn.edu.eaut.unitconverter.model.converter;
 import android.content.Context;
 import android.widget.Toast;
 
-import androidx.lifecycle.MutableLiveData;
-
 import vn.edu.eaut.unitconverter.R;
 import vn.edu.eaut.unitconverter.api.Exrate;
 import vn.edu.eaut.unitconverter.api.ExrateList;

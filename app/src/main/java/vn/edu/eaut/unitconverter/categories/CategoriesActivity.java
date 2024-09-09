@@ -4,10 +4,7 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -18,7 +15,6 @@ import vn.edu.eaut.unitconverter.converter.ConverterActivity;
 import vn.edu.eaut.unitconverter.converter.ConverterFragment;
 import vn.edu.eaut.unitconverter.converter.ConverterViewModel;
 import vn.edu.eaut.unitconverter.databinding.ActivityCategoriesBinding;
-import vn.edu.eaut.unitconverter.history.HistoryViewModel;
 import vn.edu.eaut.unitconverter.model.Categories;
 
 @AndroidEntryPoint

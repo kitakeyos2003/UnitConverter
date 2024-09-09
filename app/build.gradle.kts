@@ -17,8 +17,8 @@ android {
         applicationId = "vn.edu.eaut.unitconverter"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.3"
     }
 
     buildTypes {

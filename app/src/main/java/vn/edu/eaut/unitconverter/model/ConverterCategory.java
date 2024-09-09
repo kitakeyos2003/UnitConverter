@@ -6,12 +6,6 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import vn.edu.eaut.unitconverter.R;
 import vn.edu.eaut.unitconverter.UnitConverterApp;
 import vn.edu.eaut.unitconverter.model.converter.AreaConverter;
