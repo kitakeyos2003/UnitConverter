@@ -9,8 +9,6 @@
         android:title="@string/menu_history_label"
         app:showAsAction="ifRoom" />
     <item
-
-    
         android:id="@+id/save"
         android:icon="@drawable/ic_save"
         android:title="@string/menu_save_label"
