@@ -82,7 +82,7 @@ public class ConverterActivity extends AppCompatActivity {
             return true;
         });
     }
-
+// Comment 1
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         if (viewModel.getCategory().getValue() != null) {
