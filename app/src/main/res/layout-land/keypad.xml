@@ -6,7 +6,7 @@
     tools:ignore="HardcodedText"
     tools:layout_width="320dp"
     tools:parentTag="android.widget.LinearLayout">
-
+<!--Change LinearLayout -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
