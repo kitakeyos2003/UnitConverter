@@ -8,6 +8,7 @@ import vn.edu.eaut.unitconverter.model.ConversionUnit;
 public class TimeConverter extends Converter{
     public TimeConverter(Context context) {
         super(context);
+        //super context
     }
 
     @Override
