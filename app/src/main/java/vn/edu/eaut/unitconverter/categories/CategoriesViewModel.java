@@ -14,6 +14,6 @@ public class CategoriesViewModel extends ViewModel {
     }
 
     public void openConverter(ConverterCategory category) {
-        _converterOpened.setValue(category.getIndex());
+        _converterOpened.setValue(category.getId());
     }
 }

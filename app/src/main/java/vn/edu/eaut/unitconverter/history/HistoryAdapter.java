@@ -48,7 +48,7 @@ public class HistoryAdapter extends ListAdapter<HistoryEntity, HistoryAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         HistoryEntity item = getItem(position);
-        ConverterCategory category = Categories.INSTANCE.get(item.getCategory());
+        ConverterCategory category = Categories.get(item.getCategory());
         holder.bind(category, item);
     }
 
@@ -68,7 +68,7 @@ public class HistoryAdapter extends ListAdapter<HistoryEntity, HistoryAdapter.Vi
 
         @Override
         public boolean areContentsTheSame(HistoryEntity oldItem, HistoryEntity newItem) {
-            return oldItem.equals(newItem);
+            return oldItem.getId() == newItem.getId();
         }
     }
 

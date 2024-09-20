@@ -33,6 +33,6 @@ public class CategoriesFragment extends Fragment {
         FragmentCategoriesBinding binding = FragmentCategoriesBinding.bind(view);
         binding.recycler.setLayoutManager(new GridLayoutManager(requireContext(), getResources().getInteger(R.integer.column_count)));
         binding.recycler.setHasFixedSize(true);
-        binding.recycler.setAdapter(new CategoriesAdapter(index -> viewModel.openConverter(Categories.INSTANCE.get(index))));
+        binding.recycler.setAdapter(new CategoriesAdapter(index -> viewModel.openConverter(Categories.get(index))));
     }
 }

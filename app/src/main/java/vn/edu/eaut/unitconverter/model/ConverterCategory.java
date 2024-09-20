@@ -89,14 +89,18 @@ public enum ConverterCategory {
     @ColorRes
     private final int color;
     private final ConverterCreator creator;
-    public final int index;
+    public final int id;
 
     ConverterCategory(@StringRes int categoryName, @DrawableRes int icon, @ColorRes int color, ConverterCreator creator) {
         this.categoryName = categoryName;
         this.icon = icon;
         this.color = color;
         this.creator = creator;
-        this.index = UnitConverterApp.nextIndex.getAndIncrement();
+        this.id = UnitConverterApp.nextIndex.getAndIncrement();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getCategoryName() {
@@ -118,9 +122,4 @@ public enum ConverterCategory {
     public interface ConverterCreator {
         Converter create(Context context);
     }
-
-    public int getIndex() {
-        return index;
-    }
-
 }

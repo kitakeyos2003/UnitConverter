@@ -59,17 +59,15 @@ public class ConverterActivity extends AppCompatActivity {
         transaction.replace(R.id.container, ConverterFragment.class, getIntent().getExtras());
         transaction.commit();
 
-        viewModel.getCategory().observe(this, category -> {
-            binding.navigationView.getMenu().getItem(category).setChecked(true);
-        });
+        viewModel.getCategory().observe(this, category -> binding.navigationView.getMenu().getItem(category).setChecked(true));
 
         int category = getIntent().getIntExtra(CONVERTER_ID_EXTRA, 0);
-        viewModel.load(Categories.INSTANCE.get(category), this);
+        viewModel.load(Categories.get(category), this);
     }
 
     private void setupNavigation(ActivityConverterBinding binding) {
-        for (int i = 0; i < Categories.INSTANCE.size(); i++) {
-            ConverterCategory unit = Categories.INSTANCE.get(i);
+        for (int i = 0; i < Categories.size(); i++) {
+            ConverterCategory unit = Categories.get(i);
             binding.navigationView.getMenu()
                     .add(Menu.NONE, Menu.NONE, i, unit.getCategoryName())
                     .setCheckable(true)
@@ -77,7 +75,7 @@ public class ConverterActivity extends AppCompatActivity {
         }
 
         binding.navigationView.setNavigationItemSelectedListener(menuItem -> {
-            viewModel.load(Categories.INSTANCE.get(menuItem.getOrder()), this);
+            viewModel.load(Categories.get(menuItem.getOrder()), this);
             viewModel.setDrawerOpened(false);
             return true;
         });
@@ -96,7 +94,7 @@ public class ConverterActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         int category = savedInstanceState.getInt(CONVERTER_ID_EXTRA, -1);
         if (category != -1) {
-            viewModel.load(Categories.INSTANCE.get(category), this);
+            viewModel.load(Categories.get(category), this);
         }
     }
 

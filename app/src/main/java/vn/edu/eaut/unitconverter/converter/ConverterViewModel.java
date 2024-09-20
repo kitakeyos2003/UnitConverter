@@ -82,7 +82,7 @@ public class ConverterViewModel extends ViewModel {
         _title.setValue(category.getCategoryName());
         _backgroundColor.setValue(category.getColor());
 
-        _category.setValue(category.getIndex());
+        _category.setValue(category.getId());
 
         Converter converter = category.getConverter(context);
         initialize(converter);

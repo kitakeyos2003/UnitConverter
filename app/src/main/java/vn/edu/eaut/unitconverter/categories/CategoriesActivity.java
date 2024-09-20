@@ -1,10 +1,16 @@
 package vn.edu.eaut.unitconverter.categories;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -20,9 +26,12 @@ import vn.edu.eaut.unitconverter.model.Categories;
 @AndroidEntryPoint
 public class CategoriesActivity extends AppCompatActivity {
 
+    private SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        preferences = getSharedPreferences("menu_prefs", MODE_PRIVATE);
         ActivityCategoriesBinding binding = ActivityCategoriesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
@@ -41,30 +50,45 @@ public class CategoriesActivity extends AppCompatActivity {
         ConverterViewModel converterViewModel = new ViewModelProvider(this).get(ConverterViewModel.class);
         categoriesViewModel.getConverterOpened().observe(this, it -> {
             if (isTablet) {
-                converterViewModel.load(Categories.INSTANCE.get(it), this);
+                converterViewModel.load(Categories.get(it), this);
             } else {
                 startActivity(ConverterActivity.getIntent(this, it));
             }
         });
 
         if (isTablet) {
-            converterViewModel.load(Categories.INSTANCE.get(0), this);
+            converterViewModel.load(Categories.get(0), this);
         }
 
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-        Insetter.builder().setOnApplyInsetsListener((view, insets, initialState) -> {
-                    view.setPadding(
-                            view.getPaddingLeft(),
-                            view.getPaddingTop() + insets.getSystemWindowInsetTop(),
-                            view.getPaddingRight(),
-                            view.getPaddingBottom()
-                    );
-                    ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-                    layoutParams.leftMargin += insets.getSystemWindowInsetLeft();
-                    layoutParams.rightMargin += insets.getSystemWindowInsetRight();
-                    view.setLayoutParams(layoutParams);
-                })
+        Insetter.builder()
+                .padding(WindowInsetsCompat.Type.statusBars(), WindowInsets.Side.TOP, true)
                 .applyToView(binding.toolbarLayout);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.isCheckable()) {
+            boolean newState = !item.isChecked();
+            item.setChecked(newState);
+
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean(item.getTitle().toString(), newState);
+            editor.apply();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Categories.forEach(converter -> {
+            MenuItem item = menu.add(getString(converter.getCategoryName()));
+            item.setCheckable(true);
+            boolean isChecked = preferences.getBoolean(item.getTitle().toString(), true);
+            item.setChecked(isChecked);
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }

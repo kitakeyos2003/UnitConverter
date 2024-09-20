@@ -25,7 +25,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         binding.getRoot().setOnClickListener(v -> {
             int position = holder.getBindingAdapterPosition();
             if (position != RecyclerView.NO_POSITION) {
-                listener.onCategoryClick(Categories.INSTANCE.get(position).getIndex());
+                listener.onCategoryClick(Categories.get(position).getId());
             }
         });
         return holder;
@@ -33,12 +33,12 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.bind(Categories.INSTANCE.get(holder.getBindingAdapterPosition()));
+        holder.bind(Categories.get(holder.getBindingAdapterPosition()));
     }
 
     @Override
     public int getItemCount() {
-        return Categories.INSTANCE.size();
+        return Categories.size();
     }
 
     public interface CategoryClickListener {

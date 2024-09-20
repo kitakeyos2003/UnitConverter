@@ -4,7 +4,6 @@ plugins {
     id("com.google.devtools.ksp")
     id("dagger.hilt.android.plugin")
     id("org.gradle.android.cache-fix")
-    id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
 
@@ -17,8 +16,8 @@ android {
         applicationId = "vn.edu.eaut.unitconverter"
         minSdk = 24
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.0.3"
+        versionCode = 4
+        versionName = "1.0.4"
     }
 
     buildTypes {
@@ -47,6 +46,7 @@ dependencies {
     // Kotlin
     implementation(platform(libs.kotlinx.coroutines.bom))
     implementation(libs.kotlinx.coroutines.core)
+    implementation(files("libs\\appstore-sdk-3.0.5.jar"))
     runtimeOnly(libs.kotlinx.coroutines.android)
     // AndroidX
     implementation(libs.androidx.core.ktx)

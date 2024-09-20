@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowInsets;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -72,30 +73,12 @@ public class ConverterFragment extends Fragment {
         });
         if (binding.converterDisplayContainer != null) {
             Insetter.builder()
-                    .setOnApplyInsetsListener((v, insets, initialState) -> {
-                        int statusBarInsets = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
-                        v.setPadding(
-                                v.getPaddingLeft(),
-                                v.getPaddingTop() + statusBarInsets,
-                                v.getPaddingRight(),
-                                v.getPaddingBottom()
-                        );
-                    })
+                    .padding(WindowInsetsCompat.Type.statusBars())
                     .applyToView(binding.converterDisplayContainer);
         }
 
         Insetter.builder()
-                .setOnApplyInsetsListener((v, insets, initialState) -> {
-                    int systemBarInsetsTop = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top;
-                    int systemBarInsetsBottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
-
-                    v.setPadding(
-                            v.getPaddingLeft(),
-                            v.getPaddingTop() + systemBarInsetsTop,
-                            v.getPaddingRight(),
-                            v.getPaddingBottom() + systemBarInsetsBottom
-                    );
-                })
+                .padding(WindowInsetsCompat.Type.systemBars())
                 .applyToView(binding.keypad);
 
         binding.keypad.setBackspaceListeners(longPress -> {

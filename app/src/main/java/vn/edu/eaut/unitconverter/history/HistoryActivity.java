@@ -2,10 +2,12 @@ package vn.edu.eaut.unitconverter.history;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -32,18 +34,8 @@ public class HistoryActivity extends AppCompatActivity {
 
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-        Insetter.builder().setOnApplyInsetsListener((view, insets, initialState) -> {
-                    view.setPadding(
-                            view.getPaddingLeft(),
-                            view.getPaddingTop() + insets.getSystemWindowInsetTop(),
-                            view.getPaddingRight(),
-                            view.getPaddingBottom()
-                    );
-                    ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-                    layoutParams.leftMargin += insets.getSystemWindowInsetLeft();
-                    layoutParams.rightMargin += insets.getSystemWindowInsetRight();
-                    view.setLayoutParams(layoutParams);
-                })
+        Insetter.builder()
+                .padding(WindowInsetsCompat.Type.statusBars(), WindowInsets.Side.TOP, true)
                 .applyToView(binding.toolbarLayout);
 
     }
