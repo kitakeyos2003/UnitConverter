@@ -1,5 +1,4 @@
 <resources>
-<!--Up date Style verion  -->
     <style name="Theme.App" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
