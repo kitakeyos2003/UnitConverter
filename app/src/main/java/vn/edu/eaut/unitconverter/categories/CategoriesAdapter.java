@@ -19,8 +19,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        CategoryItemBinding binding = CategoryItemBinding.inflate(
-                LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
+        CategoryItemBinding binding = CategoryItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
         ViewHolder holder = new ViewHolder(binding);
         binding.getRoot().setOnClickListener(v -> {
             int position = holder.getBindingAdapterPosition();
@@ -56,9 +55,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         public void bind(ConverterCategory category) {
             binding.categoryName.setText(category.getCategoryName());
             binding.categoryIcon.setImageResource(category.getIcon());
-            binding.categoryContainer.setBackgroundColor(
-                    ContextCompat.getColor(itemView.getContext(), category.getColor())
-            );
+            binding.categoryContainer.setBackgroundColor(ContextCompat.getColor(itemView.getContext(), category.getColor()));
         }
     }
 }

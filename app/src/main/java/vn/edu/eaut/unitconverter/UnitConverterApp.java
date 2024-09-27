@@ -9,5 +9,4 @@ import dagger.hilt.android.HiltAndroidApp;
 @HiltAndroidApp
 public class UnitConverterApp extends Application {
 
-    public static AtomicInteger nextIndex = new AtomicInteger(0);
 }

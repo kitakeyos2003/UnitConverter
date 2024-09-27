@@ -26,12 +26,12 @@ import vn.edu.eaut.unitconverter.model.Categories;
 @AndroidEntryPoint
 public class CategoriesActivity extends AppCompatActivity {
 
-    private SharedPreferences preferences;
+//    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        preferences = getSharedPreferences("menu_prefs", MODE_PRIVATE);
+        //preferences = getSharedPreferences("menu_prefs", MODE_PRIVATE);
         ActivityCategoriesBinding binding = ActivityCategoriesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
@@ -67,28 +67,28 @@ public class CategoriesActivity extends AppCompatActivity {
                 .applyToView(binding.toolbarLayout);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.isCheckable()) {
-            boolean newState = !item.isChecked();
-            item.setChecked(newState);
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if (item.isCheckable()) {
+//            boolean newState = !item.isChecked();
+//            item.setChecked(newState);
+//
+//            SharedPreferences.Editor editor = preferences.edit();
+//            editor.putBoolean(item.getTitle().toString(), newState);
+//            editor.apply();
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean(item.getTitle().toString(), newState);
-            editor.apply();
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        Categories.forEach(converter -> {
-            MenuItem item = menu.add(getString(converter.getCategoryName()));
-            item.setCheckable(true);
-            boolean isChecked = preferences.getBoolean(item.getTitle().toString(), true);
-            item.setChecked(isChecked);
-        });
-        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        Categories.forEach(converter -> {
+//            MenuItem item = menu.add(getString(converter.getCategoryName()));
+//            item.setCheckable(true);
+//            boolean isChecked = preferences.getBoolean(item.getTitle().toString(), true);
+//            item.setChecked(isChecked);
+//        });
+//        return super.onCreateOptionsMenu(menu);
+//    }
 }
